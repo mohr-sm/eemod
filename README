@@ -1,0 +1,54 @@
+EEMOD version 1.0
+=================
+
+Original authors: Santiago Moreira and Rene Sachse
+
+License: GPLv2
+
+EEMod is an "Essential Ecological Model" which contains a DNSMod ("Detailed 
+Nitrogen SubModel") and a SEDSMod ("Sediment SubModel").
+
+The main idea of this model is developing it in 3 levels of abstraction:
+
+Level 0
+=======
+
+Different Fortran Modules are implemented containing data types, functions 
+and subroutines.
+
+In this way, people can simply use one of the methdos in their own models.
+
+
+Level 1
+=======
+
+0-Dimensional model to run the model in a "reactor type" model. This model is 
+implemented in Python and R. These enviroments will setup the input files, do 
+the integration of the differential equations and plot the results. However, they
+will use the modules developed at level 0.
+
+This level is mainly for testing modifiactions in the model / code and to apply in 
+0D- fully mixed models (reactors, shallow small lakes...)
+
+
+Level 2
+=======
+Coupling the existing model as part of a 1D model. In this case the General Ocean
+Turbulence Model (GOTM) has been choosen as 1D Hydrodynamic model. The FABM framework
+will be use as interface to couple the EEMOD and the GOTM code.
+
+In this level 2, the modules created in level 0 will be used and some additional files
+will be added to couple the EEMOD to FABM
+
+
+
+IMPORTANT
+=========
+
+The original version of EEMOD has been developed in the frame of the project NITROLIMIT
+(www.nitrolimit.de) in the Institute of Hydrobiology of the TU-Dresden.
+
+The original code of EEMOD and the different submodels (DNSMod, SedMod) is licensed by
+the GPL License. 
+
+These models are and will be always Open Source.
